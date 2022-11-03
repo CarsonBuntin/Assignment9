@@ -34,13 +34,15 @@ public class Timer {
 		  if (timeToWait < 0) {
 			  throw new TimerException("Cannot be less than zero");
 		  }
-	      timeNow = System.currentTimeMillis();
-		  method(timeToWait);
+		  else {
+			  method(timeToWait);
+		  }
 			
 		} catch (InterruptedException e) {
 			logger.severe("InterruptedException rised");
 			throw new TimerException("Sleep exception", e);
 		} finally {
+			timeNow = System.currentTimeMillis();
 			logger.info("Calling took: "+ (System.currentTimeMillis() - timeNow));
 			logger.info("* should take: "+ timeToWait);
 		}

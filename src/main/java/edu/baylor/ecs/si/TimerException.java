@@ -1,6 +1,7 @@
 package edu.baylor.ecs.si;
 
 
+
 public class TimerException extends Exception {
 
 	// TODO Q1 what is this and why do we need it?
